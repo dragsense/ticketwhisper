@@ -79,7 +79,7 @@ export default function LandingPage() {
       <main className="flex-1 lg:container max-w-[1200px] mx-auto text-center">
         {/* Hero Section */}
         <section className="w-full py-20 sm:py-32 md:py-36 bg-gradient-to-r from-purple-500 to-indigo-600" id="hero-section">
-          <div className="px-4 md:px-6">
+          <div className="px-4 md:px-6 max-w-[1200px] mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-8">
               <div className="space-y-6 lg:space-y-8">
                 <h1 className="text-3xl font-bold tracking-tighter text-white sm:text-4xl md:text-5xl lg:text-6xl">
