@@ -144,7 +144,7 @@ export default function LandingPage() {
                       className="block text-white mb-2"
                       htmlFor="preferredPlan"
                     >
-                      Preferred Plan
+                      Preferred Plan (You pay nothing now)
                     </label>
                     <select
                       id="preferredPlan"
@@ -157,9 +157,15 @@ export default function LandingPage() {
                       <option value="" disabled className="text-gray-300">
                         Select your plan
                       </option>
-                      <option value="$0" className="text-gray-600">$0 - Free Plan</option>
-                      <option value="$10" className="text-gray-600">$10 - Paid Plan</option>
-                      <option value="$100" className="text-gray-600">$100 - Concierge Service</option>
+                      <option value="$0" className="text-gray-600">
+                        $0 - Free Plan
+                      </option>
+                      <option value="$10" className="text-gray-600">
+                        $10 - Paid Plan
+                      </option>
+                      <option value="$100" className="text-gray-600">
+                        $100 - Concierge Service
+                      </option>
                     </select>
                   </div>
                   <Button
@@ -274,8 +280,73 @@ export default function LandingPage() {
         </section>
       </main>
 
-      <footer className="w-full py-8 bg-purple-500">
+      <footer className="w-full py-4 bg-purple-500">
         <div className="container px-4 md:px-6 max-w-[1200px] mx-auto text-center text-white">
+          <div className="bg-yellow-50 border border-yellow-200 rounded-3xl p-8 mt-8 text-left">
+            <div className="flex">
+              <div className="flex-shrink-0">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={2}
+                  stroke="currentColor"
+                  className="w-6 h-6 text-red-500" // Adjust classes as needed
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M12 8v4m0 4h.01M12 2a10 10 0 100 20 10 10 0 000-20z"
+                  />
+                </svg>
+              </div>
+              <div className="ml-3">
+                <h3 className="text-lg font-semibold text-yellow-800">
+                  Disclaimer: We're Just the Messenger
+                </h3>
+                <div className="mt-2 text-sm text-yellow-700">
+                  <p>
+                    Hey there, ticket hunter! Before you get too excited, we
+                    need to lay down some truth bombs:
+                  </p>
+                  <ul className="list-disc pl-5 mt-2 space-y-1">
+                    <li>
+                      TicketWhisper is just a friendly neighborhood bot that
+                      scans the internet for ticket listings. We're like that
+                      cool friend who tells you when the pizza's ready – we
+                      don't make the pizza, we just let you know it's there.
+                    </li>
+                    <li>
+                      We have absolutely zero affiliation with ticket sellers,
+                      venues, or even the artists themselves (though we'd love
+                      to hang out with Coldplay, just saying).
+                    </li>
+                    <li>
+                      Our bot is here to simplify your life, not complicate it.
+                      We're just trying to help you score those sweet, sweet
+                      concert tickets without refreshing a million tabs.
+                    </li>
+                    <li>
+                      If something goes sideways with a ticket purchase,
+                      remember: we're just the messenger. Don't shoot the
+                      messenger, or in this case, don't @ the bot.
+                    </li>
+                    <li>
+                      Use TicketWhisper at your own risk. We're not responsible
+                      for any missed concerts, empty wallets, or sudden urges to
+                      become a rockstar after securing front-row seats.
+                    </li>
+                  </ul>
+                  <p className="mt-2">
+                    By using TicketWhisper, you're agreeing to these terms and
+                    acknowledging that we're just here to help, not to be your
+                    ticket fairy godmother. Stay cool, and happy ticket hunting!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br />
           <p className="text-s">© 2024 TicketWhisper. All rights reserved.</p>
         </div>
       </footer>
