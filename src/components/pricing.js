@@ -94,7 +94,7 @@ export function PricingCards() {
               <div className="p-4 bg-gray-100 rounded-b-lg">
                 <a href="#waitlist">
                 <Button
-                    className="w-full py-2 px-4 bg-blue-600 text-white font-semibold rounded-md"
+                    className="w-full py-2 px-4 bg-purple-600 text-white font-semibold rounded-md"
                   >
                       {plan.cta}
                   </Button>
