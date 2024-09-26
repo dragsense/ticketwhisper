@@ -14,7 +14,7 @@ export default function LandingPage() {
     preferredPlan: "$0",
   });
 
-  const [isSubmitting, setIsSubmitting] = useState(false); 
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
     setFormData({
@@ -81,11 +81,20 @@ export default function LandingPage() {
           >
             Disclaimer
           </a>
+
+          <a
+            href="http://bit.ly/ticketwhisper-ig"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ml-5 text-sm font-medium hover:underline"
+          >
+            <img src="/images/instagram.png" className="w-6 h-6" alt="insta" />
+          </a>
         </nav>
       </header>
 
       {/* Mobile Menu */}
-      <nav className="block sm:hidden w-full mt-1 mb-4 text-center">
+      <nav className="flex sm:hidden w-full mt-1 mb-4 items-center justify-center">
         <a
           className="inline-block mx-2 text-sm font-medium hover:underline underline-offset-4"
           href="#features"
@@ -105,10 +114,18 @@ export default function LandingPage() {
           Pricing
         </a>
         <a
-          className="text-sm font-medium hover:underline underline-offset-4"
+          className="inline-block mx-2 text-sm font-medium hover:underline underline-offset-4"
           href="#disclaimer"
         >
           Disclaimer
+        </a>
+        <a
+          href="http://bit.ly/ticketwhisper-ig"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block mx-2 ml-5 text-sm font-medium hover:underline underline-offset-4"
+        >
+          <img src="/images/instagram.png" className="w-6 h-6" alt="insta" />
         </a>
       </nav>
 
@@ -198,7 +215,8 @@ export default function LandingPage() {
                       <option value="$100">$100 - Concierge Service</option>
                     </select>
                   </div>
-                  <Button disabled={isSubmitting}
+                  <Button
+                    disabled={isSubmitting}
                     className="bg-white text-purple-600 hover:bg-gray-100 p-2 rounded w-full"
                     type="submit"
                   >
