@@ -17,8 +17,7 @@ export default function LandingPage() {
     });
   };
 
-  const handleSubmit = (e) => {
-  };
+  const handleSubmit = (e) => {};
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -77,7 +76,10 @@ export default function LandingPage() {
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="w-full py-20 sm:py-32 md:py-36 bg-gradient-to-r from-purple-500 to-indigo-600">
+        <section
+          className="w-full py-20 sm:py-32 md:py-36 bg-gradient-to-r from-purple-500 to-indigo-600"
+          id="hero-section"
+        >
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center space-y-6 text-center">
               <div className="space-y-4">
@@ -99,7 +101,7 @@ export default function LandingPage() {
                   onSubmit={handleSubmit}
                   className="space-y-4"
                 >
-                    <Input
+                  <Input
                     className="bg-white/20 text-white placeholder:text-gray-300 p-2 rounded w-full"
                     placeholder="Enter your Email"
                     type="email"
@@ -296,9 +298,11 @@ export default function LandingPage() {
                     No ads
                   </li>
                 </ul>
-                <Button className="bg-purple-600 text-white hover:bg-purple-700 p-2 rounded">
-                  Get Started
-                </Button>
+                <a href="#hero-section">
+                  <Button className="bg-purple-600 text-white hover:bg-purple-700 p-2 rounded">
+                    Get Started
+                  </Button>
+                </a>
               </div>
             </div>
           </div>
