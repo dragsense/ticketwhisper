@@ -55,11 +55,11 @@ export function PricingCards() {
         <Disclosure key={plan.name}>
           {({ open }) => (
             <div className="bg-white shadow-lg rounded-lg flex flex-col transform transition-all duration-300 hover:scale-105 border border-gray-200">
-              <Disclosure className="w-full text-left p-4 rounded-t-lg bg-black text-white">
+              <Disclosure className="w-full text-left p-4 rounded-t-lg ">
                 <div className="flex justify-between items-center">
                   <div>
                     <h3 className="text-xl font-semibold">{plan.name}</h3>
-                    <p className="text-sm text-gray-300">{plan.description}</p>
+                    <p className="text-sm text-gray-800">{plan.description}</p>
                   </div>
                   <span className="text-2xl font-bold">{plan.price}</span>
                 </div>
@@ -92,7 +92,7 @@ export function PricingCards() {
               </Disclosure>
 
               <div className="p-4 bg-gray-100 rounded-b-lg">
-                <Button className="w-full py-2 px-4 bg-black text-white font-semibold rounded-md hover:bg-gray-800 transition duration-300">
+                <Button className="w-full py-2 px-4 bg-gray-800 text-white font-semibold rounded-md hover:bg-gray-700 transition duration-300">
                   {plan.cta}
                 </Button>
               </div>
