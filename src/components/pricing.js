@@ -1,4 +1,5 @@
-import { Disclosure } from "@headlessui/react"
+import { Disclosure } from "@headlessui/react";
+import { Button } from "@headlessui/react";
 
 const plans = [
   {
@@ -45,7 +46,7 @@ const plans = [
     ],
     cta: "Experience the VIP Treatment - Contact Us",
   },
-]
+];
 
 export function PricingCards() {
   return (
@@ -53,7 +54,7 @@ export function PricingCards() {
       {plans.map((plan) => (
         <Disclosure key={plan.name}>
           {({ open }) => (
-            <div className="bg-white shadow-lg rounded-lg flex flex-col">
+            <div className="bg-white shadow-lg rounded-lg flex flex-col transform transition-all duration-300 hover:scale-105">
               <Disclosure className="w-full text-left p-4 rounded-t-lg">
                 <div className="flex justify-between items-center">
                   <div>
@@ -91,14 +92,14 @@ export function PricingCards() {
               </Disclosure>
 
               <div className="p-4 bg-gray-100 rounded-b-lg">
-                <button className="w-full py-2 px-4 bg-blue-600 text-white font-semibold rounded-md">
+                <Button className="w-full py-2 px-4 bg-blue-600 text-white font-semibold rounded-md">
                   {plan.cta}
-                </button>
+                </Button>
               </div>
             </div>
           )}
         </Disclosure>
       ))}
     </div>
-  )
+  );
 }
