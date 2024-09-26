@@ -14,6 +14,8 @@ export default function LandingPage() {
     preferredPlan: "$0",
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false); 
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -23,6 +25,8 @@ export default function LandingPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (isSubmitting) return;
 
     const cleanedWhatsAppNumber = formData.whatsappNumber.replace(/\s+/g, "");
 
@@ -35,6 +39,8 @@ export default function LandingPage() {
       alert("Please enter a valid 8 or 9 digit WhatsApp number.");
       return;
     }
+
+    setIsSubmitting(true);
 
     e.target.submit();
   };
@@ -192,7 +198,7 @@ export default function LandingPage() {
                       <option value="$100">$100 - Concierge Service</option>
                     </select>
                   </div>
-                  <Button
+                  <Button disabled={isSubmitting}
                     className="bg-white text-purple-600 hover:bg-gray-100 p-2 rounded w-full"
                     type="submit"
                   >
