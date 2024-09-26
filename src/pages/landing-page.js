@@ -16,10 +16,10 @@ export default function LandingPage() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleChange = (e) => {
+  const handleChange = (name, value) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [name]: value,
     });
   };
 
@@ -161,8 +161,9 @@ export default function LandingPage() {
                       className="bg-transparent text-white placeholder:text-gray-300 p-2 flex-1  focus:bg-purple-700 focus:ring-2 focus:ring-purple-500 focus:outline-none"
                       placeholder="Enter your WhatsApp number"
                       type="tel"
+                      name=""
                       value={formData.whatsappNumber}
-                      onChange={handleChange}
+                      onChange={(e) => handleChange("whatsappNumber", e.target.value)}
                       maxLength={9} // Limit to UAE mobile number max length
                       required
                     />
@@ -178,7 +179,7 @@ export default function LandingPage() {
                     type="text"
                     name="instagramID"
                     value={formData.instagramID}
-                    onChange={handleChange}
+                    onChange={(e) => handleChange("instagramID", e.target.value)}
                   />
                   <Input
                     className="bg-white/20 text-white placeholder:text-gray-300 p-2 rounded w-full  focus:bg-purple-700 focus:ring-2 focus:ring-purple-500 focus:outline-none"
@@ -186,7 +187,7 @@ export default function LandingPage() {
                     type="email"
                     name="email"
                     value={formData.email}
-                    onChange={handleChange}
+                    onChange={(e) => handleChange("email", e.target.value)}
                     required
                   />
                   <Input
@@ -195,7 +196,7 @@ export default function LandingPage() {
                     type="text"
                     name="name"
                     value={formData.name}
-                    onChange={handleChange}
+                    onChange={(e) => handleChange("name", e.target.value)}
                     required
                   />
 
@@ -210,7 +211,7 @@ export default function LandingPage() {
                       id="preferredPlan"
                       name="preferredPlan"
                       value={formData.preferredPlan}
-                      onChange={handleChange}
+                      onChange={(e) => handleChange("preferredPlan", e.target.value)}
                       className="bg-white/20 text-white placeholder:text-gray-300 p-2 rounded w-full  focus:bg-purple-700 focus:ring-2 focus:ring-purple-500 focus:outline-none"
                       required
                     >
