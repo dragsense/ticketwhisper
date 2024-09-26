@@ -15,6 +15,7 @@ const plans = [
       "Basic email support (48-hour response time)",
     ],
     cta: "Get Started for Free",
+    link: "#waitlist"
   },
   {
     name: "Paid Plan",
@@ -30,6 +31,7 @@ const plans = [
       "Priority email support (24-hour response time)",
     ],
     cta: "Upgrade Now for $10",
+    link: "#"
   },
   {
     name: "Concierge Service",
@@ -45,6 +47,7 @@ const plans = [
       "24/7 VIP support",
     ],
     cta: "Experience the VIP Treatment - Contact Us",
+    link: "#"
   },
 ]
 
@@ -92,7 +95,7 @@ export function PricingCards() {
               </Disclosure>
 
               <div className="p-4 bg-gray-100 rounded-b-lg">
-                <a href="#waitlist">
+                <a href={plan.link}>
                 <Button
                     className="w-full py-2 px-4 bg-purple-600 text-white font-semibold rounded-md"
                   >

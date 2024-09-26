@@ -78,7 +78,7 @@ export default function LandingPage() {
 
       <main className="flex-1 lg:container max-w-[1200px] mx-auto text-center">
         {/* Hero Section */}
-        <section className="w-full py-20 sm:py-32 md:py-36 bg-gradient-to-r from-purple-500 to-indigo-600" id="hero-section">
+        <section className="w-full py-20 sm:py-32 md:py-36 bg-gradient-to-r from-purple-500 to-indigo-600" id="waitlist">
           <div className="px-4 md:px-6 max-w-[1200px] mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-8">
               <div className="space-y-6 lg:space-y-8">
@@ -90,7 +90,7 @@ export default function LandingPage() {
                 </p>
               </div>
 
-              <div className="w-full max-w-sm space-y-4 mx-auto" id="waitlist">
+              <div className="w-full max-w-sm space-y-4 mx-auto" >
                 <form action="https://getlaunchlist.com/s/IacnFu" method="POST" onSubmit={handleSubmit} className="space-y-4">
                   <Input className="bg-white/20 text-white placeholder:text-gray-300 p-2 rounded w-full" placeholder="Enter your WhatsApp number" type="tel" name="whatsappNumber" value={formData.whatsappNumber} onChange={handleChange} required />
                   <Input className="bg-white/20 text-white placeholder:text-gray-300 p-2 rounded w-full" placeholder="Instagram ID (Optional)" type="text" name="instagramID" value={formData.instagramID} onChange={handleChange} />
