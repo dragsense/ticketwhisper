@@ -103,19 +103,27 @@ export default function LandingPage() {
                 >
                   <Input
                     className="bg-white/20 text-white placeholder:text-gray-300 p-2 rounded w-full"
-                    placeholder="Enter your Email"
-                    type="email"
-                    name="email"
-                    value={formData.email}
+                    placeholder="Enter your WhatsApp number"
+                    type="tel"
+                    name="whatsappNumber"
+                    value={formData.whatsappNumber}
                     onChange={handleChange}
                     required
                   />
                   <Input
                     className="bg-white/20 text-white placeholder:text-gray-300 p-2 rounded w-full"
-                    placeholder="Enter your WhatsApp number"
-                    type="tel"
-                    name="whatsappNumber"
-                    value={formData.whatsappNumber}
+                    placeholder="Instagram ID (Optional)"
+                    type="text"
+                    name="instagramID"
+                    value={formData.instagramID}
+                    onChange={handleChange}
+                  />
+                  <Input
+                    className="bg-white/20 text-white placeholder:text-gray-300 p-2 rounded w-full"
+                    placeholder="Enter your Email"
+                    type="email"
+                    name="email"
+                    value={formData.email}
                     onChange={handleChange}
                     required
                   />
@@ -128,14 +136,7 @@ export default function LandingPage() {
                     onChange={handleChange}
                     required
                   />
-                  <Input
-                    className="bg-white/20 text-white placeholder:text-gray-300 p-2 rounded w-full"
-                    placeholder="Instagram ID (Optional)"
-                    type="text"
-                    name="instagramID"
-                    value={formData.instagramID}
-                    onChange={handleChange}
-                  />
+
                   <Button
                     className="bg-white text-purple-600 hover:bg-gray-100 p-2 rounded w-full"
                     type="submit"
@@ -310,7 +311,7 @@ export default function LandingPage() {
       </main>
 
       <footer className="w-full h-14 flex justify-center items-center text-gray-500 text-sm">
-        &copy; 2023 TicketWhisper. All rights reserved.
+        &copy; 2024 TicketWhisper. All rights reserved.
       </footer>
     </div>
   );
