@@ -18,7 +18,7 @@ export default function LandingPage() {
   return (
     <div className="flex flex-col min-h-screen">
       <header className="px-4 lg:px-6 h-14 flex items-center">
-        <a className="flex items-center justify-center" href="#">
+        <a className="flex items-center justify-center" href="/">
           <Ticket className="h-6 w-6 text-primary" />
           <span className="ml-2 text-xl sm:text-2xl font-bold text-primary">TicketWhisper</span>
         </a>
