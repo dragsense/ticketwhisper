@@ -3,6 +3,8 @@ import { Button } from "@headlessui/react";
 import { Input } from "@headlessui/react";
 import { Bell, Ticket, Zap, Shield, Phone } from "lucide-react";
 
+import { PricingCards } from "../components/pricing";
+
 export default function LandingPage() {
   const [formData, setFormData] = useState({
     whatsappNumber: "",
@@ -24,7 +26,7 @@ export default function LandingPage() {
       <header className="px-4 lg:px-6 h-14 flex items-center justify-between">
         <div className="flex-1 flex justify-center">
           <a className="flex items-center" href="/">
-            <Ticket className="h-6 w-6 text-primary" />
+            <Ticket className="h-6 w-6 text-primary animate-pulse" />
             <span className="ml-2 text-xl sm:text-2xl font-bold text-primary">
               TicketWhisper
             </span>
@@ -74,27 +76,26 @@ export default function LandingPage() {
         </a>
       </nav>
 
-      <main className="flex-1">
+      <main className="flex-1 lg:container max-w-[1200px] mx-auto text-center">
         {/* Hero Section */}
         <section
           className="w-full py-20 sm:py-32 md:py-36 bg-gradient-to-r from-purple-500 to-indigo-600"
           id="hero-section"
         >
-          <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center space-y-6 text-center">
-              <div className="space-y-4">
-                <h1 className="text-3xl font-bold tracking-tighter text-white sm:text-4xl md:text-5xl lg:text-6xl/none">
+          <div className="px-4 md:px-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-8">
+              <div className="space-y-6 lg:space-y-8">
+                <h1 className="text-3xl font-bold tracking-tighter text-white sm:text-4xl md:text-5xl lg:text-6xl">
                   Secure Your Spot at Coldplay UAE 2025
                 </h1>
-                <p className="mx-auto max-w-[700px] text-gray-200 md:text-xl">
+                <p className="max-w-[700px] mx-auto text-gray-200 md:text-xl">
                   TicketWhisper scans listing sites 24/7 and sends notifications
                   faster than you can say "Viva La Vida". Be the first to know,
                   be the first to buy!
                 </p>
               </div>
 
-              {/* Added more space between heading and form */}
-              <div className="w-full max-w-sm space-y-4">
+              <div className="w-full max-w-sm space-y-4 mx-auto">
                 <form
                   action="https://getlaunchlist.com/s/IacnFu"
                   method="POST"
@@ -141,7 +142,7 @@ export default function LandingPage() {
                     className="bg-white text-purple-600 hover:bg-gray-100 p-2 rounded w-full"
                     type="submit"
                   >
-                    Get Notified
+                    Join Waitlist
                   </Button>
                 </form>
                 <p className="text-xs text-gray-300">
@@ -149,19 +150,24 @@ export default function LandingPage() {
                 </p>
               </div>
             </div>
+
+            {/* Add SVG animation */}
+            <div className="flex justify-center mt-10">
+              <Ticket className="h-16 w-16 text-white animate-bounce" />
+            </div>
           </div>
         </section>
 
         <section
           id="features"
-          className="w-full py-12 md:py-24 lg:py-32 bg-gray-100"
+          className="w-full py-20 sm:py-32 md:py-36 bg-gray-100"
         >
-          <div className="container px-4 md:px-6">
-            <h2 className="text-3xl font-bold tracking-tighter text-center mb-24">
+          <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
+            <h2 className="text-3xl font-bold tracking-tighter text-center mb-16">
               Why Choose TicketWhisper?
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <div className="flex flex-col items-center text-center">
+              <div className="flex flex-col items-center text-center transition-transform duration-300 transform hover:scale-105">
                 <Bell className="h-12 w-12 text-purple-600 mb-4" />
                 <h3 className="text-xl font-bold mb-2">
                   Instant Notifications
@@ -170,21 +176,21 @@ export default function LandingPage() {
                   Get alerts where you actually check - WhatsApp and Instagram.
                 </p>
               </div>
-              <div className="flex flex-col items-center text-center">
+              <div className="flex flex-col items-center text-center transition-transform duration-300 transform hover:scale-105">
                 <Zap className="h-12 w-12 text-purple-600 mb-4" />
                 <h3 className="text-xl font-bold mb-2">Lightning Fast</h3>
                 <p className="text-gray-600">
                   Our bot scans listings quicker than you can refresh your feed.
                 </p>
               </div>
-              <div className="flex flex-col items-center text-center">
+              <div className="flex flex-col items-center text-center transition-transform duration-300 transform hover:scale-105">
                 <Shield className="h-12 w-12 text-purple-600 mb-4" />
                 <h3 className="text-xl font-bold mb-2">Secure & Private</h3>
                 <p className="text-gray-600">
                   Your data is safe with us. No spam, we promise.
                 </p>
               </div>
-              <div className="flex flex-col items-center text-center">
+              <div className="flex flex-col items-center text-center transition-transform duration-300 transform hover:scale-105">
                 <Phone className="h-12 w-12 text-purple-600 mb-4" />
                 <h3 className="text-xl font-bold mb-2">Mobile First</h3>
                 <p className="text-gray-600">
@@ -195,9 +201,9 @@ export default function LandingPage() {
           </div>
         </section>
 
-        <section id="how-it-works" className="w-full py-12 md:py-24 lg:py-32">
-          <div className="container px-4 md:px-6">
-            <h2 className="text-3xl font-bold tracking-tighter text-center mb-24">
+        <section id="how-it-works" className="w-full py-20 sm:py-32 md:py-36">
+          <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
+            <h2 className="text-3xl font-bold tracking-tighter text-center mb-16">
               How TicketWhisper Works
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
@@ -214,20 +220,15 @@ export default function LandingPage() {
                 </p>
                 <h3 className="text-xl font-bold">3. Get Notified</h3>
                 <p className="text-gray-600">
-                  Receive instant notifications on WhatsApp or Instagram. Not in
-                  your already overflowing inbox.
-                </p>
-                <h3 className="text-xl font-bold">4. Grab Your Tickets</h3>
-                <p className="text-gray-600">
-                  Act fast and secure your spot at the UAE's biggest concert of
-                  2025!
+                  Receive instant alerts so you can secure your tickets before
+                  anyone else.
                 </p>
               </div>
-              <div className="relative h-[400px] w-full">
+              <div>
                 <img
-                  alt="Coldplay concert"
-                  className="object-cover rounded-lg"
                   src="/images/Coldplay-in-VR-3-scaled.webp"
+                  alt="How it works"
+                  className="rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105"
                 />
               </div>
             </div>
@@ -236,82 +237,23 @@ export default function LandingPage() {
 
         <section
           id="pricing"
-          className="w-full py-12 md:py-24 lg:py-32 bg-gray-100"
+          className="w-full py-20 sm:py-32 md:py-36 bg-gray-100"
         >
-          <div className="container px-4 md:px-6">
+          <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
             <h2 className="text-3xl font-bold tracking-tighter text-center mb-16">
               Simple Pricing
             </h2>
-            <div className="max-w-sm mx-auto">
-              <div className="bg-white rounded-lg shadow-lg p-6 text-center">
-                <h3 className="text-2xl font-bold mb-4">Free Forever</h3>
-                <p className="text-4xl font-bold mb-4">$0</p>
-                <ul className="text-left space-y-2 mb-6">
-                  <li className="flex items-center">
-                    <svg
-                      className="w-4 h-4 mr-2 text-green-500"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    Instant notifications
-                  </li>
-                  <li className="flex items-center">
-                    <svg
-                      className="w-4 h-4 mr-2 text-green-500"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    Unlimited sites
-                  </li>
-                  <li className="flex items-center">
-                    <svg
-                      className="w-4 h-4 mr-2 text-green-500"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    No ads
-                  </li>
-                </ul>
-                <a href="#hero-section">
-                  <Button className="bg-purple-600 text-white hover:bg-purple-700 p-2 rounded">
-                    Get Started
-                  </Button>
-                </a>
-              </div>
+            <div className="mx-auto">
+              <PricingCards />
             </div>
           </div>
         </section>
       </main>
 
-      <footer className="w-full h-14 flex justify-center items-center text-gray-500 text-sm">
-        &copy; 2024 TicketWhisper. All rights reserved.
+      <footer className="w-full py-8 bg-gray-800">
+        <div className="container px-4 md:px-6 max-w-[1200px] mx-auto text-center text-gray-400">
+          <p className="text-xs">© 2025 TicketWhisper. All rights reserved.</p>
+        </div>
       </footer>
     </div>
   );
