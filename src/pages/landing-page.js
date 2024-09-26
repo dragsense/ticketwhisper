@@ -99,6 +99,15 @@ export default function LandingPage() {
                   onSubmit={handleSubmit}
                   className="space-y-4"
                 >
+                    <Input
+                    className="bg-white/20 text-white placeholder:text-gray-300 p-2 rounded w-full"
+                    placeholder="Enter your Email"
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                  />
                   <Input
                     className="bg-white/20 text-white placeholder:text-gray-300 p-2 rounded w-full"
                     placeholder="Enter your WhatsApp number"
