@@ -161,11 +161,15 @@ export default function LandingPage() {
                       className="bg-transparent text-white placeholder:text-gray-300 p-2 flex-1  focus:bg-purple-700 focus:ring-2 focus:ring-purple-500 focus:outline-none"
                       placeholder="Enter your WhatsApp number"
                       type="tel"
-                      name="whatsappNumber"
                       value={formData.whatsappNumber}
                       onChange={handleChange}
                       maxLength={9} // Limit to UAE mobile number max length
                       required
+                    />
+                    <input
+                      type="hidden"
+                      name="whatsappNumber"
+                      value={"+971" + formData.whatsappNumber}
                     />
                   </div>
                   <Input
