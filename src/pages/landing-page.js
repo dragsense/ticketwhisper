@@ -8,9 +8,10 @@ import { PricingCards } from "../components/pricing";
 export default function LandingPage() {
   const [formData, setFormData] = useState({
     whatsappNumber: "",
-    name: "",
     instagramID: "",
-    preferredPlan: "",
+    email: "",
+    name: "",
+    preferredPlan: "$0",
   });
 
   const handleChange = (e) => {
@@ -20,7 +21,23 @@ export default function LandingPage() {
     });
   };
 
-  const handleSubmit = (e) => {};
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const cleanedWhatsAppNumber = formData.whatsappNumber.replace(/\s+/g, "");
+
+    const updatedFormData = {
+      ...formData,
+      whatsappNumber: `+971${cleanedWhatsAppNumber}`,
+    };
+
+    if (!updatedFormData.whatsappNumber.match(/^\+971\d{8,9}$/)) {
+      alert("Please enter a valid 8 or 9 digit WhatsApp number.");
+      return;
+    }
+
+    e.target.submit();
+  };
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -52,6 +69,12 @@ export default function LandingPage() {
           >
             Pricing
           </a>
+          <a
+            className="text-sm font-medium hover:underline underline-offset-4"
+            href="#disclaimer"
+          >
+            Disclaimer
+          </a>
         </nav>
       </header>
 
@@ -74,6 +97,12 @@ export default function LandingPage() {
           href="#pricing"
         >
           Pricing
+        </a>
+        <a
+          className="text-sm font-medium hover:underline underline-offset-4"
+          href="#disclaimer"
+        >
+          Disclaimer
         </a>
       </nav>
 
@@ -103,17 +132,21 @@ export default function LandingPage() {
                   onSubmit={handleSubmit}
                   className="space-y-4"
                 >
+                  <div className="flex items-center space-x-2 bg-white/20 p-2 rounded w-full">
+                    <span className="text-white">+971</span>
+                    <input
+                      className="bg-transparent text-white placeholder:text-gray-300 p-2 flex-1  focus:bg-purple-700 focus:ring-2 focus:ring-purple-500 focus:outline-none"
+                      placeholder="Enter your WhatsApp number"
+                      type="tel"
+                      name="whatsappNumber"
+                      value={formData.whatsappNumber}
+                      onChange={handleChange}
+                      maxLength={9} // Limit to UAE mobile number max length
+                      required
+                    />
+                  </div>
                   <Input
-                    className="bg-white/20 text-white placeholder:text-gray-300 p-2 rounded w-full"
-                    placeholder="Enter your WhatsApp number"
-                    type="tel"
-                    name="whatsappNumber"
-                    value={formData.whatsappNumber}
-                    onChange={handleChange}
-                    required
-                  />
-                  <Input
-                    className="bg-white/20 text-white placeholder:text-gray-300 p-2 rounded w-full"
+                    className="bg-white/20 text-white placeholder:text-gray-300 p-2 rounded w-full  focus:bg-purple-700 focus:ring-2 focus:ring-purple-500 focus:outline-none"
                     placeholder="Instagram ID (Optional)"
                     type="text"
                     name="instagramID"
@@ -121,7 +154,7 @@ export default function LandingPage() {
                     onChange={handleChange}
                   />
                   <Input
-                    className="bg-white/20 text-white placeholder:text-gray-300 p-2 rounded w-full"
+                    className="bg-white/20 text-white placeholder:text-gray-300 p-2 rounded w-full  focus:bg-purple-700 focus:ring-2 focus:ring-purple-500 focus:outline-none"
                     placeholder="Enter your Email"
                     type="email"
                     name="email"
@@ -130,7 +163,7 @@ export default function LandingPage() {
                     required
                   />
                   <Input
-                    className="bg-white/20 text-white placeholder:text-gray-300 p-2 rounded w-full"
+                    className="bg-white/20 text-white placeholder:text-gray-300 p-2 rounded w-full  focus:bg-purple-700 focus:ring-2 focus:ring-purple-500 focus:outline-none"
                     placeholder="Enter your name"
                     type="text"
                     name="name"
@@ -151,21 +184,12 @@ export default function LandingPage() {
                       name="preferredPlan"
                       value={formData.preferredPlan}
                       onChange={handleChange}
-                      className="bg-white/20 text-white placeholder:text-gray-300 p-2 rounded w-full"
+                      className="bg-white/20 text-white placeholder:text-gray-300 p-2 rounded w-full  focus:bg-purple-700 focus:ring-2 focus:ring-purple-500 focus:outline-none"
                       required
                     >
-                      <option value="" disabled className="text-gray-300">
-                        Select your plan
-                      </option>
-                      <option value="$0" className="text-gray-600">
-                        $0 - Free Plan
-                      </option>
-                      <option value="$10" className="text-gray-600">
-                        $10 - Paid Plan
-                      </option>
-                      <option value="$100" className="text-gray-600">
-                        $100 - Concierge Service
-                      </option>
+                      <option value="$0">$0 - Free Plan</option>
+                      <option value="$10">$10 - Paid Plan</option>
+                      <option value="$100">$100 - Concierge Service</option>
                     </select>
                   </div>
                   <Button
@@ -281,7 +305,10 @@ export default function LandingPage() {
       </main>
 
       <footer className="w-full py-4 bg-purple-500">
-        <div className="container px-4 md:px-6 max-w-[1200px] mx-auto text-center text-white">
+        <div
+          className="container px-4 md:px-6 max-w-[1200px] mx-auto text-center text-white"
+          id="disclaimer"
+        >
           <div className="bg-yellow-50 border border-yellow-200 rounded-3xl p-8 mt-8 text-left">
             <div className="flex">
               <div className="flex-shrink-0">
