@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button } from "@headlessui/react";
-import { Input } from "@headlessui/react"; // Using a simple input as Headless UI does not provide a dedicated Input component
+import { Input } from "@headlessui/react";
 import { Bell, Ticket, Zap, Shield, Phone } from "lucide-react";
 
 export default function LandingPage() {
@@ -17,12 +17,16 @@ export default function LandingPage() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <header className="px-4 lg:px-6 h-14 flex items-center">
-        <a className="flex items-center justify-center" href="/">
-          <Ticket className="h-6 w-6 text-primary" />
-          <span className="ml-2 text-xl sm:text-2xl font-bold text-primary">TicketWhisper</span>
-        </a>
-        <nav className="ml-auto flex gap-4 sm:gap-6">
+      <header className="px-4 lg:px-6 h-14 flex items-center justify-between">
+        <div className="flex-1 flex justify-center">
+          <a className="flex items-center" href="/">
+            <Ticket className="h-6 w-6 text-primary" />
+            <span className="ml-2 text-xl sm:text-2xl font-bold text-primary">
+              TicketWhisper
+            </span>
+          </a>
+        </div>
+        <nav className="hidden sm:flex flex-1 justify-center gap-4 sm:gap-6">
           <a className="text-sm font-medium hover:underline underline-offset-4" href="#features">
             Features
           </a>
@@ -34,6 +38,20 @@ export default function LandingPage() {
           </a>
         </nav>
       </header>
+
+      {/* Mobile Menu */}
+      <nav className="block sm:hidden w-full mt-4 mb-4 text-center">
+        <a className="inline-block mx-2 text-sm font-medium hover:underline underline-offset-4" href="#features">
+          Features
+        </a>
+        <a className="inline-block mx-2 text-sm font-medium hover:underline underline-offset-4" href="#how-it-works">
+          How It Works
+        </a>
+        <a className="inline-block mx-2 text-sm font-medium hover:underline underline-offset-4" href="#pricing">
+          Pricing
+        </a>
+      </nav>
+
       <main className="flex-1">
         <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-gradient-to-r from-purple-500 to-indigo-600">
           <div className="container px-4 md:px-6">
@@ -48,7 +66,10 @@ export default function LandingPage() {
                 </p>
               </div>
               <div className="w-full max-w-sm space-y-2">
-                <form className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2" onSubmit={handleAddNotification}>
+                <form
+                  className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2"
+                  onSubmit={handleAddNotification}
+                >
                   <Input
                     className="max-w-lg flex-1 bg-white/10 text-white placeholder:text-gray-300 p-2 rounded"
                     placeholder="Enter your WhatsApp number"
@@ -60,13 +81,12 @@ export default function LandingPage() {
                     Get Notified
                   </Button>
                 </form>
-                <p className="text-xs text-gray-300">
-                  We respect your privacy. Unsubscribe at any time.
-                </p>
+                <p className="text-xs text-gray-300">We respect your privacy. Unsubscribe at any time.</p>
               </div>
             </div>
           </div>
         </section>
+
         <section id="features" className="w-full py-12 md:py-24 lg:py-32 bg-gray-100">
           <div className="container px-4 md:px-6">
             <h2 className="text-3xl font-bold tracking-tighter text-center mb-8">Why Choose TicketWhisper?</h2>
@@ -94,6 +114,7 @@ export default function LandingPage() {
             </div>
           </div>
         </section>
+
         <section id="how-it-works" className="w-full py-12 md:py-24 lg:py-32">
           <div className="container px-4 md:px-6">
             <h2 className="text-3xl font-bold tracking-tighter text-center mb-8">How TicketWhisper Works</h2>
@@ -118,6 +139,7 @@ export default function LandingPage() {
             </div>
           </div>
         </section>
+
         <section id="pricing" className="w-full py-12 md:py-24 lg:py-32 bg-gray-100">
           <div className="container px-4 md:px-6">
             <h2 className="text-3xl font-bold tracking-tighter text-center mb-8">Simple Pricing</h2>
@@ -134,9 +156,9 @@ export default function LandingPage() {
                       viewBox="0 0 24 24"
                       xmlns="http://www.w3.org/2000/svg"
                     >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
-                    Instant WhatsApp/Instagram notifications
+                    Instant notifications
                   </li>
                   <li className="flex items-center">
                     <svg
@@ -146,9 +168,9 @@ export default function LandingPage() {
                       viewBox="0 0 24 24"
                       xmlns="http://www.w3.org/2000/svg"
                     >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
-                    No hidden fees
+                    Unlimited sites
                   </li>
                   <li className="flex items-center">
                     <svg
@@ -158,23 +180,20 @@ export default function LandingPage() {
                       viewBox="0 0 24 24"
                       xmlns="http://www.w3.org/2000/svg"
                     >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
-                    Cancel anytime
+                    No ads
                   </li>
                 </ul>
-                <Button className="bg-purple-600 text-white py-2 px-4 rounded" onClick={() => alert('Coming Soon!')}>
-                  Get Started
-                </Button>
+                <Button className="bg-purple-600 text-white hover:bg-purple-700 p-2 rounded">Get Started</Button>
               </div>
             </div>
           </div>
         </section>
       </main>
-      <footer className="bg-gray-800 text-white py-6">
-        <div className="container px-4 md:px-6 text-center">
-          <p>&copy; {new Date().getFullYear()} TicketWhisper. All rights reserved.</p>
-        </div>
+
+      <footer className="w-full h-14 flex justify-center items-center text-gray-500 text-sm">
+        &copy; 2023 TicketWhisper. All rights reserved.
       </footer>
     </div>
   );
