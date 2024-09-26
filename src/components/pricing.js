@@ -68,7 +68,7 @@ export function PricingCards() {
                 <div className="p-4 flex-grow">
                   <ul className="space-y-2">
                     {plan.features.map((feature, index) => (
-                      <li key={index} className="flex items-center">
+                      <li key={index} className="flex items-center text-left">
                         <svg
                           className="w-4 h-4 mr-2 text-green-500"
                           fill="none"
