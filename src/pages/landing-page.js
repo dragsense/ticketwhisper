@@ -10,6 +10,7 @@ export default function LandingPage() {
     whatsappNumber: "",
     name: "",
     instagramID: "",
+    preferredPlan: "",
   });
 
   const handleChange = (e) => {
@@ -78,7 +79,10 @@ export default function LandingPage() {
 
       <main className="flex-1 lg:container max-w-[1200px] mx-auto text-center">
         {/* Hero Section */}
-        <section className="w-full py-20 sm:py-32 md:py-36 bg-gradient-to-r from-purple-500 to-indigo-600" id="waitlist">
+        <section
+          className="w-full py-20 sm:py-32 md:py-36 bg-gradient-to-r from-purple-500 to-indigo-600"
+          id="waitlist"
+        >
           <div className="px-4 md:px-6 max-w-[1200px] mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-8">
               <div className="space-y-6 lg:space-y-8">
@@ -86,22 +90,88 @@ export default function LandingPage() {
                   Secure Your Spot at Coldplay UAE 2025
                 </h1>
                 <p className="max-w-[700px] mx-auto text-gray-200 md:text-xl">
-                  TicketWhisper scans listing sites 24/7 and sends notifications faster than you can say "Viva La Vida". Be the first to know, be the first to buy!
+                  TicketWhisper scans listing sites 24/7 and sends notifications
+                  faster than you can say "Viva La Vida". Be the first to know,
+                  be the first to buy!
                 </p>
               </div>
 
-              <div className="w-full max-w-sm space-y-4 mx-auto" >
-                <form action="https://getlaunchlist.com/s/IacnFu" method="POST" onSubmit={handleSubmit} className="space-y-4">
-                  <Input className="bg-white/20 text-white placeholder:text-gray-300 p-2 rounded w-full" placeholder="Enter your WhatsApp number" type="tel" name="whatsappNumber" value={formData.whatsappNumber} onChange={handleChange} required />
-                  <Input className="bg-white/20 text-white placeholder:text-gray-300 p-2 rounded w-full" placeholder="Instagram ID (Optional)" type="text" name="instagramID" value={formData.instagramID} onChange={handleChange} />
-                  <Input className="bg-white/20 text-white placeholder:text-gray-300 p-2 rounded w-full" placeholder="Enter your Email" type="email" name="email" value={formData.email} onChange={handleChange} required />
-                  <Input className="bg-white/20 text-white placeholder:text-gray-300 p-2 rounded w-full" placeholder="Enter your name" type="text" name="name" value={formData.name} onChange={handleChange} required />
+              <div className="w-full max-w-sm space-y-4 mx-auto">
+                <form
+                  action="https://getlaunchlist.com/s/IacnFu"
+                  method="POST"
+                  onSubmit={handleSubmit}
+                  className="space-y-4"
+                >
+                  <Input
+                    className="bg-white/20 text-white placeholder:text-gray-300 p-2 rounded w-full"
+                    placeholder="Enter your WhatsApp number"
+                    type="tel"
+                    name="whatsappNumber"
+                    value={formData.whatsappNumber}
+                    onChange={handleChange}
+                    required
+                  />
+                  <Input
+                    className="bg-white/20 text-white placeholder:text-gray-300 p-2 rounded w-full"
+                    placeholder="Instagram ID (Optional)"
+                    type="text"
+                    name="instagramID"
+                    value={formData.instagramID}
+                    onChange={handleChange}
+                  />
+                  <Input
+                    className="bg-white/20 text-white placeholder:text-gray-300 p-2 rounded w-full"
+                    placeholder="Enter your Email"
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                  />
+                  <Input
+                    className="bg-white/20 text-white placeholder:text-gray-300 p-2 rounded w-full"
+                    placeholder="Enter your name"
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                  />
 
-                  <Button className="bg-white text-purple-600 hover:bg-gray-100 p-2 rounded w-full" type="submit">
+                  <div>
+                    <label
+                      className="block text-white mb-2"
+                      htmlFor="preferredPlan"
+                    >
+                      Preferred Plan
+                    </label>
+                    <select
+                      id="preferredPlan"
+                      name="preferredPlan"
+                      value={formData.preferredPlan}
+                      onChange={handleChange}
+                      className="bg-white/20 text-white placeholder:text-gray-300 p-2 rounded w-full"
+                      required
+                    >
+                      <option value="" disabled className="text-gray-300">
+                        Select your plan
+                      </option>
+                      <option value="$0" className="text-gray-600">$0 - Free Plan</option>
+                      <option value="$10" className="text-gray-600">$10 - Paid Plan</option>
+                      <option value="$100" className="text-gray-600">$100 - Concierge Service</option>
+                    </select>
+                  </div>
+                  <Button
+                    className="bg-white text-purple-600 hover:bg-gray-100 p-2 rounded w-full"
+                    type="submit"
+                  >
                     Join Waitlist
                   </Button>
                 </form>
-                <p className="text-xs text-gray-300">We respect your privacy. Unsubscribe at any time.</p>
+                <p className="text-xs text-gray-300">
+                  We respect your privacy. Unsubscribe at any time.
+                </p>
               </div>
             </div>
 
@@ -111,7 +181,6 @@ export default function LandingPage() {
             </div>
           </div>
         </section>
-
 
         <section
           id="features"
@@ -194,7 +263,7 @@ export default function LandingPage() {
           id="pricing"
           className="w-full py-20 sm:py-32 md:py-36 bg-gray-100"
         >
-           <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
+          <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
             <h2 className="text-3xl font-bold tracking-tighter text-center mb-16">
               Simple Pricing
             </h2>

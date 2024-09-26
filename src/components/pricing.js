@@ -100,7 +100,7 @@ export function PricingCards() {
                     className="w-full py-2 px-4 bg-purple-600 text-white font-semibold rounded-md 
              hover:bg-purple-500 transition duration-300"
                   >
-                    {plan.cta}
+                    Coming Soon
                   </Button>
                 </a>
               </div>
