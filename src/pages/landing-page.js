@@ -227,7 +227,7 @@ export default function LandingPage() {
                 <img
                   alt="Coldplay concert"
                   className="object-cover rounded-lg"
-                  src="/images/ticket-whisper.jpg"
+                  src="/images/Coldplay-in-VR-3-scaled.webp"
                 />
               </div>
             </div>
