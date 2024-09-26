@@ -47,7 +47,7 @@ export default function LandingPage() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <header className="px-4 lg:px-6 h-14 flex items-center justify-between">
+      <header className="fixed bg-white shadow-md z-50 w-full px-4 py-5 lg:px-6 flex md:flex-row flex-col items-center justify-between gap-2">
         <div className="flex-1 flex justify-center">
           <a className="flex items-center" href="/">
             <Ticket className="h-6 w-6 text-primary animate-pulse" />
@@ -56,7 +56,7 @@ export default function LandingPage() {
             </span>
           </a>
         </div>
-        <nav className="hidden sm:flex flex-1 justify-center gap-4 sm:gap-6">
+        <nav className="flex flex-1 justify-center gap-4 sm:gap-6">
           <a
             className="text-sm font-medium hover:underline underline-offset-4"
             href="#features"
@@ -91,48 +91,47 @@ export default function LandingPage() {
             <img src="/images/instagram.png" className="w-6 h-6" alt="insta" />
           </a>
         </nav>
+        {/* Mobile Menu */}
+       {/*  <nav className="flex sm:hidden w-full mt-1 mb-4 items-center justify-center">
+          <a
+            className="inline-block mx-2 text-sm font-medium hover:underline underline-offset-4"
+            href="#features"
+          >
+            Features
+          </a>
+          <a
+            className="inline-block mx-2 text-sm font-medium hover:underline underline-offset-4"
+            href="#how-it-works"
+          >
+            How It Works
+          </a>
+          <a
+            className="inline-block mx-2 text-sm font-medium hover:underline underline-offset-4"
+            href="#pricing"
+          >
+            Pricing
+          </a>
+          <a
+            className="inline-block mx-2 text-sm font-medium hover:underline underline-offset-4"
+            href="#disclaimer"
+          >
+            Disclaimer
+          </a>
+          <a
+            href="http://bit.ly/ticketwhisper-ig"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block mx-2 ml-5 text-sm font-medium hover:underline underline-offset-4"
+          >
+            <img src="/images/instagram.png" className="w-6 h-6" alt="insta" />
+          </a>
+        </nav> */}
       </header>
-
-      {/* Mobile Menu */}
-      <nav className="flex sm:hidden w-full mt-1 mb-4 items-center justify-center">
-        <a
-          className="inline-block mx-2 text-sm font-medium hover:underline underline-offset-4"
-          href="#features"
-        >
-          Features
-        </a>
-        <a
-          className="inline-block mx-2 text-sm font-medium hover:underline underline-offset-4"
-          href="#how-it-works"
-        >
-          How It Works
-        </a>
-        <a
-          className="inline-block mx-2 text-sm font-medium hover:underline underline-offset-4"
-          href="#pricing"
-        >
-          Pricing
-        </a>
-        <a
-          className="inline-block mx-2 text-sm font-medium hover:underline underline-offset-4"
-          href="#disclaimer"
-        >
-          Disclaimer
-        </a>
-        <a
-          href="http://bit.ly/ticketwhisper-ig"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block mx-2 ml-5 text-sm font-medium hover:underline underline-offset-4"
-        >
-          <img src="/images/instagram.png" className="w-6 h-6" alt="insta" />
-        </a>
-      </nav>
 
       <main className="flex-1 lg:container max-w-[1200px] mx-auto text-center">
         {/* Hero Section */}
         <section
-          className="w-full py-20 sm:py-32 md:py-36 bg-gradient-to-r from-purple-500 to-indigo-600"
+          className="w-full py-20 mt-16 sm:py-32 md:py-36 bg-gradient-to-r from-purple-500 to-indigo-600"
           id="waitlist"
         >
           <div className="px-4 md:px-6 max-w-[1200px] mx-auto">
@@ -162,7 +161,9 @@ export default function LandingPage() {
                       placeholder="Enter your WhatsApp number"
                       type="tel"
                       value={formData.whatsappNumber}
-                      onChange={(e) => handleChange("whatsappNumber", e.target.value)}
+                      onChange={(e) =>
+                        handleChange("whatsappNumber", e.target.value)
+                      }
                       maxLength={9} // Limit to UAE mobile number max length
                       required
                     />
@@ -178,7 +179,9 @@ export default function LandingPage() {
                     type="text"
                     name="instagramID"
                     value={formData.instagramID}
-                    onChange={(e) => handleChange("instagramID", e.target.value)}
+                    onChange={(e) =>
+                      handleChange("instagramID", e.target.value)
+                    }
                   />
                   <Input
                     className="bg-white/20 text-white placeholder:text-gray-300 p-2 rounded w-full  focus:bg-purple-700 focus:ring-2 focus:ring-purple-500 focus:outline-none"
@@ -210,7 +213,9 @@ export default function LandingPage() {
                       id="preferredPlan"
                       name="preferredPlan"
                       value={formData.preferredPlan}
-                      onChange={(e) => handleChange("preferredPlan", e.target.value)}
+                      onChange={(e) =>
+                        handleChange("preferredPlan", e.target.value)
+                      }
                       className="bg-white/20 text-white placeholder:text-gray-300 p-2 rounded w-full  focus:bg-purple-700 focus:ring-2 focus:ring-purple-500 focus:outline-none"
                       required
                     >
