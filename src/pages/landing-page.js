@@ -205,7 +205,7 @@ export default function LandingPage() {
         </section>
       </main>
 
-      <footer className="w-full py-8 bg-purple-800">
+      <footer className="w-full py-8 bg-purple-500">
         <div className="container px-4 md:px-6 max-w-[1200px] mx-auto text-center text-white">
           <p className="text-s">© 2024 TicketWhisper. All rights reserved.</p>
         </div>

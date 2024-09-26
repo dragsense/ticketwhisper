@@ -1,4 +1,4 @@
-import { Disclosure } from "@headlessui/react"
+import { Disclosure } from "@headlessui/react";
 import { Button } from "@headlessui/react";
 
 const plans = [
@@ -15,7 +15,7 @@ const plans = [
       "Basic email support (48-hour response time)",
     ],
     cta: "Get Started for Free",
-    link: "#waitlist"
+    link: "#waitlist",
   },
   {
     name: "Paid Plan",
@@ -31,7 +31,7 @@ const plans = [
       "Priority email support (24-hour response time)",
     ],
     cta: "Upgrade Now for $10",
-    link: "#"
+    link: "#",
   },
   {
     name: "Concierge Service",
@@ -47,9 +47,9 @@ const plans = [
       "24/7 VIP support",
     ],
     cta: "Experience the VIP Treatment - Contact Us",
-    link: "#"
+    link: "#",
   },
-]
+];
 
 export function PricingCards() {
   return (
@@ -57,7 +57,7 @@ export function PricingCards() {
       {plans.map((plan) => (
         <Disclosure key={plan.name}>
           {({ open }) => (
-            <div className="bg-white shadow-lg rounded-lg flex flex-col">
+            <div className="bg-white shadow-lg rounded-lg flex flex-col transition-transform duration-300 transform hover:scale-105">
               <Disclosure className="w-full text-left p-4 rounded-t-lg">
                 <div className="flex justify-between items-center">
                   <div>
@@ -96,17 +96,18 @@ export function PricingCards() {
 
               <div className="p-4 bg-gray-100 rounded-b-lg">
                 <a href={plan.link}>
-                <Button
-                    className="w-full py-2 px-4 bg-purple-600 text-white font-semibold rounded-md"
+                  <Button
+                    className="w-full py-2 px-4 bg-purple-600 text-white font-semibold rounded-md 
+             hover:bg-purple-500 transition duration-300"
                   >
-                      {plan.cta}
+                    {plan.cta}
                   </Button>
-                  </a>
+                </a>
               </div>
             </div>
           )}
         </Disclosure>
       ))}
     </div>
-  )
+  );
 }
