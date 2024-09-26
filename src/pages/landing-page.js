@@ -56,7 +56,42 @@ export default function LandingPage() {
             </span>
           </a>
         </div>
-        <nav className="flex flex-1 justify-center gap-4 sm:gap-6">
+        <nav className="flex sm:hidden flex-1 justify-center gap-4 sm:gap-6">
+          <a
+            className="text-sm font-medium hover:underline underline-offset-4"
+            href="#features_"
+          >
+            Features
+          </a>
+          <a
+            className="text-sm font-medium hover:underline underline-offset-4"
+            href="#how-it-works_"
+          >
+            How It Works
+          </a>
+          <a
+            className="text-sm font-medium hover:underline underline-offset-4"
+            href="#pricing_"
+          >
+            Pricing
+          </a>
+          <a
+            className="text-sm font-medium hover:underline underline-offset-4"
+            href="#disclaimer_"
+          >
+            Disclaimer
+          </a>
+
+          <a
+            href="http://bit.ly/ticketwhisper-ig"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ml-5 text-sm font-medium hover:underline"
+          >
+            <img src="/images/instagram.png" className="w-6 h-6" alt="insta" />
+          </a>
+        </nav>
+        <nav className="hidden sm:flex flex-1 justify-center gap-4 sm:gap-6">
           <a
             className="text-sm font-medium hover:underline underline-offset-4"
             href="#features"
@@ -91,41 +126,7 @@ export default function LandingPage() {
             <img src="/images/instagram.png" className="w-6 h-6" alt="insta" />
           </a>
         </nav>
-        {/* Mobile Menu */}
-       {/*  <nav className="flex sm:hidden w-full mt-1 mb-4 items-center justify-center">
-          <a
-            className="inline-block mx-2 text-sm font-medium hover:underline underline-offset-4"
-            href="#features"
-          >
-            Features
-          </a>
-          <a
-            className="inline-block mx-2 text-sm font-medium hover:underline underline-offset-4"
-            href="#how-it-works"
-          >
-            How It Works
-          </a>
-          <a
-            className="inline-block mx-2 text-sm font-medium hover:underline underline-offset-4"
-            href="#pricing"
-          >
-            Pricing
-          </a>
-          <a
-            className="inline-block mx-2 text-sm font-medium hover:underline underline-offset-4"
-            href="#disclaimer"
-          >
-            Disclaimer
-          </a>
-          <a
-            href="http://bit.ly/ticketwhisper-ig"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block mx-2 ml-5 text-sm font-medium hover:underline underline-offset-4"
-          >
-            <img src="/images/instagram.png" className="w-6 h-6" alt="insta" />
-          </a>
-        </nav> */}
+      
       </header>
 
       <main className="flex-1 lg:container max-w-[1200px] mx-auto text-center">
@@ -243,8 +244,9 @@ export default function LandingPage() {
               <Ticket className="h-16 w-16 text-white animate-bounce" />
             </div>
           </div>
+          <div id="features_"></div>
         </section>
-
+                     
         <section
           id="features"
           className="w-full py-20 sm:py-32 md:py-36 bg-gray-100"
@@ -286,8 +288,9 @@ export default function LandingPage() {
               </div>
             </div>
           </div>
+          <div id="how-it-works_"></div>
         </section>
-
+      
         <section id="how-it-works" className="w-full py-20 sm:py-32 md:py-36">
           <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
             <h2 className="text-3xl font-bold tracking-tighter text-center mb-16">
@@ -320,10 +323,11 @@ export default function LandingPage() {
               </div>
             </div>
           </div>
+          <div  id="pricing_"></div>
         </section>
-
+      
         <section
-          id="pricing"
+         id="pricing"
           className="w-full py-20 sm:py-32 md:py-36 bg-gray-100"
         >
           <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
@@ -334,9 +338,10 @@ export default function LandingPage() {
               <PricingCards />
             </div>
           </div>
+          <div  id="disclaimer_"></div>
         </section>
       </main>
-
+     
       <footer className="w-full py-4 bg-purple-500">
         <div
           className="container px-4 md:px-6 max-w-[1200px] mx-auto text-center text-white"
