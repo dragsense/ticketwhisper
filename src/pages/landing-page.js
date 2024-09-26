@@ -70,7 +70,7 @@ export default function LandingPage() {
               {/* Added more space between heading and form */}
               <div className="w-full max-w-sm space-y-4">
                 <form
-                  className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-2"
+                  className="flex flex-col sm:flex-row space-y-8 sm:space-y-0 sm:space-x-2"
                   onSubmit={handleAddNotification}
                 >
                   <Input
@@ -92,7 +92,7 @@ export default function LandingPage() {
 
         <section id="features" className="w-full py-12 md:py-24 lg:py-32 bg-gray-100">
           <div className="container px-4 md:px-6">
-            <h2 className="text-3xl font-bold tracking-tighter text-center mb-8">Why Choose TicketWhisper?</h2>
+            <h2 className="text-3xl font-bold tracking-tighter text-center mb-24">Why Choose TicketWhisper?</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               <div className="flex flex-col items-center text-center">
                 <Bell className="h-12 w-12 text-purple-600 mb-4" />
@@ -120,7 +120,7 @@ export default function LandingPage() {
 
         <section id="how-it-works" className="w-full py-12 md:py-24 lg:py-32">
           <div className="container px-4 md:px-6">
-            <h2 className="text-3xl font-bold tracking-tighter text-center mb-8">How TicketWhisper Works</h2>
+            <h2 className="text-3xl font-bold tracking-tighter text-center mb-24">How TicketWhisper Works</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
               <div className="space-y-4">
                 <h3 className="text-xl font-bold">1. Sign Up</h3>
@@ -136,7 +136,7 @@ export default function LandingPage() {
                 <img
                   alt="Coldplay concert"
                   className="object-cover rounded-lg"
-                  src="/placeholder.svg" // Adjust the src to your actual image path
+                  src="/images/ticket-whisper.jpg" 
                 />
               </div>
             </div>
@@ -145,7 +145,7 @@ export default function LandingPage() {
 
         <section id="pricing" className="w-full py-12 md:py-24 lg:py-32 bg-gray-100">
           <div className="container px-4 md:px-6">
-            <h2 className="text-3xl font-bold tracking-tighter text-center mb-8">Simple Pricing</h2>
+            <h2 className="text-3xl font-bold tracking-tighter text-center mb-16">Simple Pricing</h2>
             <div className="max-w-sm mx-auto">
               <div className="bg-white rounded-lg shadow-lg p-6 text-center">
                 <h3 className="text-2xl font-bold mb-4">Free Forever</h3>
