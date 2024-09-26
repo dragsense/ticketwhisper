@@ -54,7 +54,7 @@ export function PricingCards() {
         <Disclosure key={plan.name}>
           {({ open }) => (
             <div className="bg-white shadow-lg rounded-lg flex flex-col">
-              <Disclosure className="w-full text-left p-4 bg-gray-100 rounded-t-lg">
+              <Disclosure className="w-full text-left p-4 rounded-t-lg">
                 <div className="flex justify-between items-center">
                   <div>
                     <h3 className="text-xl font-semibold">{plan.name}</h3>
