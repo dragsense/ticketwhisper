@@ -1,4 +1,4 @@
-import { Disclosure } from "@headlessui/react";
+import { Disclosure } from "@headlessui/react"
 import { Button } from "@headlessui/react";
 
 const plans = [
@@ -46,7 +46,7 @@ const plans = [
     ],
     cta: "Experience the VIP Treatment - Contact Us",
   },
-];
+]
 
 export function PricingCards() {
   return (
@@ -54,24 +54,24 @@ export function PricingCards() {
       {plans.map((plan) => (
         <Disclosure key={plan.name}>
           {({ open }) => (
-            <div className="bg-white shadow-lg rounded-lg flex flex-col transform transition-all duration-300 hover:scale-105 border border-gray-200">
-              <Disclosure className="w-full text-left p-4 rounded-t-lg ">
+            <div className="bg-white shadow-lg rounded-lg flex flex-col">
+              <Disclosure className="w-full text-left p-4 rounded-t-lg">
                 <div className="flex justify-between items-center">
                   <div>
                     <h3 className="text-xl font-semibold">{plan.name}</h3>
-                    <p className="text-sm text-gray-800">{plan.description}</p>
+                    <p className="text-sm text-gray-500">{plan.description}</p>
                   </div>
                   <span className="text-2xl font-bold">{plan.price}</span>
                 </div>
               </Disclosure>
 
               <Disclosure>
-                <div className="p-4 flex-grow bg-white">
+                <div className="p-4 flex-grow">
                   <ul className="space-y-2">
                     {plan.features.map((feature, index) => (
-                      <li key={index} className="flex items-center text-left text-black">
+                      <li key={index} className="flex items-center text-left">
                         <svg
-                          className="w-4 h-4 mr-2 text-black"
+                          className="w-4 h-4 mr-2 text-green-500"
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
@@ -92,14 +92,18 @@ export function PricingCards() {
               </Disclosure>
 
               <div className="p-4 bg-gray-100 rounded-b-lg">
-                <Button className="w-full py-2 px-4 bg-gray-800 text-white font-semibold rounded-md hover:bg-gray-700 transition duration-300">
-                  {plan.cta}
-                </Button>
+                <a href="#waitlist">
+                <Button
+                    className="w-full py-2 px-4 bg-blue-600 text-white font-semibold rounded-md"
+                  >
+                      {plan.cta}
+                  </Button>
+                  </a>
               </div>
             </div>
           )}
         </Disclosure>
       ))}
     </div>
-  );
+  )
 }
