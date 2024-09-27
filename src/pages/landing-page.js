@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { Button } from "@headlessui/react";
 import { Input } from "@headlessui/react";
-import { Bell, Ticket, Zap, Shield, Phone } from "lucide-react";
+import { Bell, Ticket, Zap, Shield, Phone, Menu, X } from "lucide-react";
 
 import { PricingCards } from "../components/pricing";
+import { SellerProgram } from "../components/seller-program";
 
 export default function LandingPage() {
   const [formData, setFormData] = useState({
@@ -15,6 +16,7 @@ export default function LandingPage() {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const handleChange = (name, value) => {
     setFormData({
@@ -47,7 +49,7 @@ export default function LandingPage() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <header className="fixed bg-white shadow-md z-50 w-full px-4 py-5 lg:px-6 flex md:flex-row flex-col items-center justify-between gap-2">
+      <header className="fixed bg-white shadow-md z-50 w-full px-4 py-5 lg:px-6 flex  items-center justify-between gap-2">
         <div className="flex-1 flex justify-center">
           <a className="flex items-center" href="/">
             <Ticket className="h-6 w-6 text-primary animate-pulse" />
@@ -56,41 +58,78 @@ export default function LandingPage() {
             </span>
           </a>
         </div>
-        <nav className="flex sm:hidden flex-1 justify-center gap-4 sm:gap-6">
-          <a
-            className="text-sm font-medium hover:underline underline-offset-4"
-            href="#features_"
+        {/* Hamburger Icon for Mobile Menu */}
+        <div className="sm:hidden flex items-center">
+          <button
+            className="focus:outline-none"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
-            Features
-          </a>
-          <a
-            className="text-sm font-medium hover:underline underline-offset-4"
-            href="#how-it-works_"
-          >
-            How It Works
-          </a>
-          <a
-            className="text-sm font-medium hover:underline underline-offset-4"
-            href="#pricing_"
-          >
-            Pricing
-          </a>
-          <a
-            className="text-sm font-medium hover:underline underline-offset-4"
-            href="#disclaimer_"
-          >
-            Disclaimer
-          </a>
+            {mobileMenuOpen ? (
+              <X className="h-6 w-6 text-primary" />
+            ) : (
+              <Menu className="h-6 w-6 text-primary" />
+            )}
+          </button>
+        </div>
 
-          <a
-            href="http://bit.ly/ticketwhisper-ig"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="ml-5 text-sm font-medium hover:underline"
-          >
-            <img src="/images/instagram.png" className="w-6 h-6" alt="insta" />
-          </a>
-        </nav>
+        {/* Mobile Menu Drawer */}
+        <div
+          className={`${
+            mobileMenuOpen ? "translate-x-0" : "-translate-x-full"
+          } fixed top-0 flex align-middle justify-center left-0 w-3/4 h-full bg-white shadow-lg z-50 transform transition-transform duration-300 ease-in-out sm:hidden`}
+        >
+          <nav className="flex flex-col align-middle p-5 gap-4 text-center">
+            <a
+              className="text-sm font-medium hover:underline underline-offset-4"
+              href="#features_"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Features
+            </a>
+            <a
+              className="text-sm font-medium hover:underline underline-offset-4"
+              href="#how-it-works_"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              How It Works
+            </a>
+            <a
+              className="text-sm font-medium hover:underline underline-offset-4"
+              href="#seller-program_"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Seller Program
+            </a>
+            <a
+              className="text-sm font-medium hover:underline underline-offset-4"
+              href="#pricing_"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Pricing
+            </a>
+            <a
+              className="text-sm font-medium hover:underline underline-offset-4"
+              href="#disclaimer_"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Disclaimer
+            </a>
+            <a
+              href="http://bit.ly/ticketwhisper-ig"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-5 text-sm font-medium hover:underline underline-offset-4"
+            >
+              <img
+                src="/images/instagram.png"
+                className="w-6 h-6 m-auto"
+                alt="insta"
+              />
+            </a>
+          </nav>
+        </div>
+
+        {/* Desktop Menu */}
         <nav className="hidden sm:flex flex-1 justify-center gap-4 sm:gap-6">
           <a
             className="text-sm font-medium hover:underline underline-offset-4"
@@ -106,6 +145,12 @@ export default function LandingPage() {
           </a>
           <a
             className="text-sm font-medium hover:underline underline-offset-4"
+            href="#seller-program"
+          >
+            Seller Program
+          </a>
+          <a
+            className="text-sm font-medium hover:underline underline-offset-4"
             href="#pricing"
           >
             Pricing
@@ -116,7 +161,6 @@ export default function LandingPage() {
           >
             Disclaimer
           </a>
-
           <a
             href="http://bit.ly/ticketwhisper-ig"
             target="_blank"
@@ -134,7 +178,7 @@ export default function LandingPage() {
           className="w-full py-20 mt-16 sm:py-32 md:py-36 bg-gradient-to-r from-purple-500 to-indigo-600"
           id="waitlist"
         >
-          <div className="px-4 md:px-6 max-w-[1200px] mx-auto">
+          <div className="px-4 md:px-6 lg:container max-w-[1200px] mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-8">
               <div className="space-y-6 lg:space-y-8">
                 <h1 className="text-3xl font-bold tracking-tighter text-white sm:text-4xl md:text-5xl lg:text-6xl">
@@ -246,13 +290,10 @@ export default function LandingPage() {
           <div id="features_"></div>
         </section>
 
-        <section
-          id="videos"
-          className="w-full py-20 sm:py-32 md:py-36"
-        >
+        <section id="videos" className="w-full py-20 sm:py-32 md:py-36">
           <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
             <h2 className="text-3xl font-bold tracking-tighter text-center mb-16">
-            Stay Safe from Ticket Scams!
+              Stay Safe from Ticket Scams!
             </h2>
 
             <div className="flex justify-center">
@@ -392,17 +433,25 @@ export default function LandingPage() {
               </div>
             </div>
           </div>
-          <div id="pricing_"></div>
+          <div id="seller-program_"></div>
         </section>
 
         <section
-          id="pricing"
+          id="seller-program"
           className="w-full py-20 sm:py-32 md:py-36 bg-gray-100"
         >
+          <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
+            <SellerProgram />
+          </div>
+          <div id="pricing_"></div>
+        </section>
+
+        <section id="pricing" className="w-full py-20 sm:py-32 md:py-36">
           <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
             <h2 className="text-3xl font-bold tracking-tighter text-center mb-16">
               Simple Pricing
             </h2>
+
             <div className="mx-auto">
               <PricingCards />
             </div>
