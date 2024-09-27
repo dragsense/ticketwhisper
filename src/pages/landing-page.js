@@ -126,7 +126,6 @@ export default function LandingPage() {
             <img src="/images/instagram.png" className="w-6 h-6" alt="insta" />
           </a>
         </nav>
-      
       </header>
 
       <main className="flex-1 lg:container max-w-[1200px] mx-auto text-center">
@@ -246,7 +245,77 @@ export default function LandingPage() {
           </div>
           <div id="features_"></div>
         </section>
-                     
+
+        <section
+          id="videos"
+          className="w-full py-20 sm:py-32 md:py-36"
+        >
+          <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
+            <h2 className="text-3xl font-bold tracking-tighter text-center mb-16">
+            Stay Safe from Ticket Scams!
+            </h2>
+
+            <div className="flex justify-center">
+              {/* TikTok Video Embed */}
+              <blockquote
+                className="tiktok-embed"
+                cite="https://www.tiktok.com/@shikhabalani/video/7419022872263331090"
+                data-video-id="7419022872263331090"
+                style={{ maxWidth: "605px", minWidth: "325px" }}
+              >
+                <section>
+                  <a
+                    href="https://www.tiktok.com/@shikhabalani"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    @shikhabalani
+                  </a>
+                  <p>
+                    How to avoid getting scammed when buying concert tickets
+                    from other people
+                    <a
+                      href="https://www.tiktok.com/tag/coldplay"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      #coldplay
+                    </a>
+                    <a
+                      href="https://www.tiktok.com/tag/coldplayabudhabi"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      #coldplayabudhabi
+                    </a>
+                    <a
+                      href="https://www.tiktok.com/tag/resellers"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      #resellers
+                    </a>
+                    <a
+                      href="https://www.tiktok.com/tag/ticketmaster"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      #ticketmaster
+                    </a>
+                  </p>
+                  <a
+                    href="https://www.tiktok.com/music/original-sound-7419022910716676881"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    ♬ original sound - SHIKHA BALANI
+                  </a>
+                </section>
+              </blockquote>
+            </div>
+          </div>
+        </section>
+
         <section
           id="features"
           className="w-full py-20 sm:py-32 md:py-36 bg-gray-100"
@@ -290,7 +359,7 @@ export default function LandingPage() {
           </div>
           <div id="how-it-works_"></div>
         </section>
-      
+
         <section id="how-it-works" className="w-full py-20 sm:py-32 md:py-36">
           <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
             <h2 className="text-3xl font-bold tracking-tighter text-center mb-16">
@@ -323,11 +392,11 @@ export default function LandingPage() {
               </div>
             </div>
           </div>
-          <div  id="pricing_"></div>
+          <div id="pricing_"></div>
         </section>
-      
+
         <section
-         id="pricing"
+          id="pricing"
           className="w-full py-20 sm:py-32 md:py-36 bg-gray-100"
         >
           <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
@@ -338,10 +407,10 @@ export default function LandingPage() {
               <PricingCards />
             </div>
           </div>
-          <div  id="disclaimer_"></div>
+          <div id="disclaimer_"></div>
         </section>
       </main>
-     
+
       <footer className="w-full py-4 bg-purple-500">
         <div
           className="container px-4 md:px-6 max-w-[1200px] mx-auto text-center text-white"
