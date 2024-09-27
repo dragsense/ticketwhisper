@@ -222,7 +222,7 @@ export default function LandingPage() {
                     >
                       <option value="$0">$0 - Free Plan</option>
                       <option value="$10">$10 - Paid Plan</option>
-                      <option value="$100">$100 - Concierge Service</option>
+                      <option value="$1000">$1000 - Concierge Service</option>
                     </select>
                   </div>
                   <Button
