@@ -12,7 +12,7 @@ export default function LandingPage() {
     instagramID: "",
     email: "",
     name: "",
-    preferredPlan: "$0",
+    preferredPlan: "1",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -263,9 +263,9 @@ export default function LandingPage() {
                       className="bg-white/20 text-white placeholder:text-gray-300 p-2 rounded w-full  focus:bg-purple-700 focus:ring-2 focus:ring-purple-500 focus:outline-none"
                       required
                     >
-                      <option value="$0">$0 - Free Plan</option>
-                      <option value="$10">$10 - Paid Plan</option>
-                      <option value="$1000">$1000 - Concierge Service</option>
+                      <option value="1">$0 - Free Plan</option>
+                      <option value="2">$10 - Paid Plan</option>
+                      <option value="3">$1000 - Concierge Service</option>
                     </select>
                   </div>
                   <Button
